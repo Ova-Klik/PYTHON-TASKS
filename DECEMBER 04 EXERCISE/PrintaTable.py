@@ -6,9 +6,9 @@ a = 1
 b = 2
       
 
-while (b<=6):
+while (a<=5):
     
-    print(str(a)+ "\t"+str(b)+"\t"+str(a**b))
+    print(f"{a}\t{b}\t{a**b}")
 
     a = a+1
     b = b+1
