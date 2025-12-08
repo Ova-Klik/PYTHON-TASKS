@@ -9,7 +9,6 @@ number_four = (number//10)%10
 number_five =number%10
 
 
-print(f"{number_one}   {number_two}   {number_three}   {number_four}   {number_five}")
-
+print( number_one, number_two, number_three, number_four, number_five, sep="   ")
 
 
