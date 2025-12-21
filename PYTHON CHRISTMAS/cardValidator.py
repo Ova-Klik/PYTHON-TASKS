@@ -1,6 +1,6 @@
 number = input("\nHello Kindly enter card number to verify:\n")
 
-# ---- CARD TYPE ----
+
 if number.startswith("4"):
     print("\n**Card Type: Visa Card")
 elif number.startswith("5"):
@@ -12,7 +12,6 @@ elif number.startswith("6"):
 else:
     print("**Card Type: Invalid")
 
-# ---- DIGIT & LENGTH CHECK ----
 if len(number) < 13 or len(number) > 16:
     print("**Card Number: Invalid length")
     
@@ -25,7 +24,7 @@ for ch in number:
 print(f"**Card Number Length: {len(number)}")
 print(f"**Card Number: {number}")
 
-# ---- LUHN CHECK ----
+
 total = 0
 
 for index in range(len(number) - 1, -1, -1):
@@ -38,7 +37,6 @@ for index in range(len(number) - 1, -1, -1):
 
     total += new_number
 
-# ---- VALIDITY RESULT ----
 if total % 10 == 0:
     print("**Card Validity: Valid")
 else:
