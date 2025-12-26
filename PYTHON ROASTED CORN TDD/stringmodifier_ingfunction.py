@@ -6,10 +6,12 @@ def string_modifier_add_ing(entry, get_string_test):
     if length<3:
         get_string+=entry
        
-    elif length>=3 and entry.startswith("ing",length-3):
-        get_string+=entry+"ly"
+    elif length>=3:
+        if entry.endswith("ing"):
+            get_string+=entry+"ly"
         else:
-            get-string+=entry+"ing"
+            get_string+=entry+"ing"
+    
     return get_string==get_string_test
 
     
