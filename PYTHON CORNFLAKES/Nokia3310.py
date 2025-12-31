@@ -28,7 +28,7 @@ while True:
         break
 
     match main_menu_choice:
-        # 1. PHONE BOOK
+        
         case 1:
             while True:
                 print("""
@@ -89,7 +89,7 @@ while True:
                     case _:
                         print("Invalid option\n")
 
-        # 2. MESSAGES
+       
         case 2:
             while True:
                 print("""
@@ -177,11 +177,11 @@ while True:
                     case _:
                         print("Invalid Input...\n")
 
-        # 3. CHAT
+       
         case 3:
             print("Chat selected\n")
 
-        # 4. CALL REGISTER
+       
         case 4:
             while True:
                 print("""
@@ -280,7 +280,7 @@ while True:
                     case _:
                         print("Invalid option\n")
 
-        # 5. TONES
+        
         case 5:
             while True:
                 print("""
@@ -321,7 +321,7 @@ while True:
                     case _:
                         print("Invalid option\n")
 
-        # 6. SETTINGS
+       
         case 6:
             while True:
                 print("""
@@ -431,23 +431,23 @@ while True:
                     case _:
                         print("Invalid Input\n")
 
-        # 7. CALL DIVERT
+        
         case 7:
             print("Call divert selected\n")
 
-        # 8. INFO SERVICE
+        
         case 8:
             print("Info service selected\n")
 
-        # 9. VOICE MAILBOX NUMBER
+        
         case 9:
             print("Voice mailbox number selected\n")
 
-        # 10. SERVICE COMMAND EDITOR
+        
         case 10:
             print("Service command editor selected\n")
 
-        # 11. CLOCK
+     
         case 11:
             while True:
                 print("""
@@ -479,11 +479,11 @@ while True:
                     case _:
                         print("Invalid Input\n")
 
-        # 12. PROFILES
+        
         case 12:
             print("Profiles selected\n")
 
-        # 13. SIM SERVICES
+        
         case 13:
             print("SIM Services selected\n")
 
