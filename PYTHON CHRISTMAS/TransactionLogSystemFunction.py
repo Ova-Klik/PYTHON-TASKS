@@ -4,7 +4,7 @@ import re
 
 account_balance=0
 transaction_history=[]
-amount_regex= re.compile(r"^\d+(\.\d{1,2})?$")
+amount_regex= re.compile(r"^(?!0+(\.0+)?$)\d+(\.\d{1,2})?$")
 
 
 def deposit(account_balance,transaction_history):
@@ -87,7 +87,7 @@ def withdrawal(account_balance,transaction_history):
                 break
     return account_balance
                 
-def history(account_balance,transaction_history):
+def history(transaction_history):
    
         print("\n\t\t\t\t-- TRANSACTION HISTORY --\n")
 
