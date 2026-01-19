@@ -1,7 +1,10 @@
+import re
+
 book_title= ["The Hobbit", "The Mystery"]
 book_pages= ["47","12"]
 book_author= ["wisdom craig","Anthony Blob"]
 
+menu_regex = re.compile(r"^[0-5]$")
 
 while True:
     
@@ -20,15 +23,19 @@ while True:
                """
     print(book_menu)
     
+    menu_option=input("Enter operation(1-4): ")
     
+    if not menu_regex.fullmatch(menu_option):
+        print("Invalid input!")
+        continue 
+    else:
+        option=int(menu_option) 
+        
+    if option==0:
+        print("\nThank you for using Transaction Log App")
+        exit(0)
     
-    menu_option=int(input("Enter operation:"))
-    if menu_option==0:
-        print(f"\n      Thank you for visiting the library...\n")
-        break
-    
-    
-    match menu_option:
+    match option:
         case 1:
             
             index=0

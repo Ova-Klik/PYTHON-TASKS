@@ -5,9 +5,9 @@ import re
 account_balance=0
 transaction_history=[]
 amount_regex= re.compile(r"^(?!0+(\.0+)?$)\d+(\.\d{1,2})?$")
+menu_regex=re.compile(r"^[1-4]$")
 
-
-def deposit(account_balance,transaction_history):
+def deposit(account_balance):
     while True:
         amount=input("Kindly enter amount to deposit:$ ")
         if not amount_regex.fullmatch(amount):
@@ -28,7 +28,7 @@ def deposit(account_balance,transaction_history):
                          
         print(f""" 
    
-                         {'':<15}{'Deposit Successful!'}
+                         {'Deposit Successful!':<15}
                          
                          {'Date & Time':<20}  {'Amount':<12}      {'Balance'}
                          
@@ -39,12 +39,18 @@ def deposit(account_balance,transaction_history):
                 
                 
         more=input("Will you like to make more deposit? (yes/no): ").casefold()
-        if more=="no":
+        if more=="yes":
+            continue
+        elif more=="no": 
             print("\nThank you for banking with us!\n")
             break
+        else:
+            print ("\nInvalid input!")
+            
+            
     return account_balance        
       
-def withdrawal(account_balance,transaction_history):    
+def withdrawal(account_balance):    
     
     while True:
         
@@ -74,9 +80,9 @@ def withdrawal(account_balance,transaction_history):
                 
                          {'':<15} {'Withdrawal Successful!'}
                          
-                         {'Date & Time':<20}  \t\tAmount:      \tBalance
+                         {'Date & Time':<20}  {'Amount':<12}      {'Balance'}
                          
-                         {transaction_time:<4}  \t${amount:<8,} ${account_balance:,}
+                         {transaction_time:<20}  \t${amount:<16,} ${account_balance:,}
                          
                       """ ) 
                 
@@ -108,14 +114,14 @@ def history(transaction_history):
                     
                     
                 )
-        more =input("\n\nKindly exit to main menu: ").casefold() 
-        break                    
+            more =input("\n\nKindly exit to main menu: ").casefold() 
+            break                    
 
 while True:
     transaction_time=datetime.now().strftime("%d-%m-%y %I:%M %P")
     account_menu=f"""
             
-            {transaction_time:4s}
+                                  {transaction_time:4s}
                      
                                Welcome to Transaction Log App
                                
@@ -130,21 +136,28 @@ while True:
     
                  """
     print(account_menu)
-    menu_option=int(input("Enter operation: "))
+    menu_option=input("Enter operation(1-4): ")
     
-    if menu_option==4:
+    if not menu_regex.fullmatch(menu_option):
+        print("Invalid input!")
+        continue 
+    else:
+          
+        option=int(menu_option) 
+        
+    if option==4:
         print("\nThank you for using Transaction Log App")
         break
     
-    match menu_option:
+    match option:
         case 1:
-            account_balance = deposit(account_balance, transaction_history)
+            account_balance = deposit(account_balance)
                 
         case 2:
-            account_balance = withdrawal(account_balance,transaction_history)
+            account_balance = withdrawal(account_balance)
                         
         case 3:
-            history(account_balance,transaction_history)
+            history(transaction_history)
             
         case _:
         
