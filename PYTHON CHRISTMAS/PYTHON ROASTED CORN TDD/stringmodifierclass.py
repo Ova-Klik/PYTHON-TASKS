@@ -1,4 +1,4 @@
-import re
+
 
 def string_modifier(entry, get_string_test):
     get_string=""
