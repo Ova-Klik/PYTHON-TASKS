@@ -1,5 +1,6 @@
 
 
+
 def mutiple_of_10(number):
     sum=0;
 
@@ -24,13 +25,14 @@ def even_number(number):
         if number%2==0:  
             print(number)
             
-            
+  
+   
+def student_score():
+          
     studentfail=0;
     studentpass=0; 
-   
-def student_score(number):
 
-    for number in range(0,15):
+    for number in range(15):
        
         score=int(input("Kindly enter score: "))
         if score<45:
@@ -40,8 +42,8 @@ def student_score(number):
         
             studentpass+=1;
             
-    return(f"{studentpass} passed")
-    return(f"{studentfail} failed")
+    print(f"{studentpass} passed")
+    print(f"{studentfail} failed")
 
 
 def mutiplication_table(number):
@@ -64,4 +66,19 @@ def star(number):
         
         result= '*'* a
         print(f"{result}")
+        
+def number_triangle(number):
+
+    number=int(input("Kindly enter a number to get a triangle factorial: "))
+
+
+    for a in range(5,0, -1):
+        
+        for b in range(a,0,-1):
+        
+            print(b,end=" ")
+        
+        print()
+        
+
     
